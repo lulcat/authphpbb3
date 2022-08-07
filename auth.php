@@ -761,7 +761,7 @@ class auth_plugin_authphpbb3 extends DokuWiki_Auth_Plugin {
             return false;
         }
         // Get session data from database.
-        $query = "SELECT session_id, session_user_id
+        $query = "SELECT session_id, session_user_id, session_time
                   FROM {$this->_phpbb_conf['table_prefix']}sessions
                   WHERE session_id = ?";
         $result = $this->_phpbb_sql_link->prepare($query);
